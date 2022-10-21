@@ -55,17 +55,20 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    console.log(fileName);
+    console.log(data);
+    fs.writeFile(fileName, generateMarkdown(data), (err) => {
+        err ? console.log(err) : console.log(`Success! ${fileName} was generated`);
+    });
+}
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer
     .prompt(questions)
     .then((response) => {
-     // fs.appendFile("./response.json", JSON.stringify(response, null, "\t"), (err) => {
-       // err ? console.log(err) : console.log("Success!");
-     // })
-      //console.log(response.username, response.email, response.title);
+        writeToFile("README.md", response);
     })    
 }
 
