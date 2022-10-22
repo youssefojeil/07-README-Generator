@@ -8,7 +8,10 @@ const questions = [
     {
         type: "input",
         message: "What is your GitHub username?",
-        name: "username"
+        name: "username",
+        validate(value) {
+           return (value ? true : "Please enter you Github username")
+        }
     },
     {
         type: "input",
@@ -34,12 +37,18 @@ const questions = [
     {
         type: "input",
         message: "What command should be run to install dependencies?",
-        name: "install"
+        name: "install",
+        default() {
+            return "npm install"
+        }
     },
     {
         type: "input",
         message: "What command should be run to run tests?",
-        name: "tests"
+        name: "tests",
+        default() {
+            return "npm test"
+        }
     },
     {
         type: "input",
