@@ -74,48 +74,29 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `
   ${renderLicenseSection(data.license)}
-
   # ${data.title}
   ## Description
   ${data.description}
-
 ## Table Of Contents
-
 <li><a href="#installation">Installation</a></li>
 <li><a href="#usage">Usage</a></li>
 <li><a href="#license">License</a></li>
 <li><a href="#contributing">Contributing</a></li>
 <li><a href="#tests">Tests</a></li>
 <li><a href="#questions">Questions</a></li>
-
-
 ## Installation
-
 To install necessary dependencies, run the following command:
-
 ${data.install}
-
 ## Usage
-
 ${data.usage}
-
 ## License
-
 This project is licensed under the ${renderLicenseBadge(data.license)} ${renderLicenseLink(data.license)}
-
 ## Contributing
-
 ${data.contributing}
-
 ## Tests
-
 ${data.tests}
-
-
 ## Questions
-
 If you have any feedback on what we can add to our application or any issues that you have run into, please feel free to reach out at my github https://github.com/${data.username} or by email at ${data.email}.
-
 `;
 }
 
